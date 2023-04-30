@@ -1,0 +1,11 @@
+*** Settings ***
+
+Library      SeleniumLibrary
+
+Resource      ../data/cartPageKeywords.robot
+Resource      ../data/loginPageKeywords.robot
+Resource      ../data/checkoutPageKeywords.robot
+
+Resource      ../webelements/cartPage.robot
+Resource      ../webelements/loginPage.robot
+Resource      ../webelements/checkoutPage.robot

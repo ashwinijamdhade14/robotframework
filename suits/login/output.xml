@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.11 on win32)" generated="20230429 07:15:55.538" rpa="false" schemaversion="3">
+<suite id="s1" name="loginPageTest" source="C:\Users\Administrator\PycharmProjects\sauceDemoProject\suits\login\loginPageTest.robot">
+<test id="s1-t1" name="Verify That User Will Be Able To Login With Valid Username And Valid Password" line="8">
+<kw name="Open SauceDemo Website" library="loginPageKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230429 07:15:55.850" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230429 07:15:55.866" level="INFO">Executing: C:\Users\Administrator\AppData\Roaming\Python\Python310\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230429 07:15:55.850" endtime="20230429 07:16:00.711"/>
+</kw>
+<status status="PASS" starttime="20230429 07:15:55.850" endtime="20230429 07:16:00.711"/>
+</kw>
+<kw name="Login To SwagLabs" library="loginPageKeywords">
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+<doc>Login to SwagLabs</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:00.715" level="INFO">Typing text 'standard_user' into text field 'xpath=//*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:00.714" endtime="20230429 07:16:00.857"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:00.858" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:00.858" endtime="20230429 07:16:00.976"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:00.977" level="INFO">Clicking element 'xpath=//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:00.976" endtime="20230429 07:16:01.120"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:00.713" endtime="20230429 07:16:01.120"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230429 07:16:01.121" endtime="20230429 07:16:03.324"/>
+</kw>
+<doc>Test login with valid credentials</doc>
+<status status="PASS" starttime="20230429 07:15:55.850" endtime="20230429 07:16:03.324"/>
+</test>
+<test id="s1-t2" name="Verify That User Is Not Able To Login With Valid Username And An Invalid Password" line="12">
+<kw name="Open SauceDemo Website" library="loginPageKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230429 07:16:03.324" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230429 07:16:03.340" level="INFO">Executing: C:\Users\Administrator\AppData\Roaming\Python\Python310\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230429 07:16:03.324" endtime="20230429 07:16:07.866"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:03.324" endtime="20230429 07:16:07.866"/>
+</kw>
+<kw name="Login To SwagLabs" library="loginPageKeywords">
+<arg>standard_user</arg>
+<arg>123</arg>
+<doc>Login to SwagLabs</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:07.871" level="INFO">Typing text 'standard_user' into text field 'xpath=//*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:07.871" endtime="20230429 07:16:07.998"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:07.999" level="INFO">Typing text '123' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:07.998" endtime="20230429 07:16:08.100"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:08.101" level="INFO">Clicking element 'xpath=//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:08.100" endtime="20230429 07:16:08.183"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:07.870" endtime="20230429 07:16:08.183"/>
+</kw>
+<kw name="Error Message For Invalid Creds" library="loginPageKeywords">
+<doc>Verify Error Message For Invalid Creds</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_msg}</var>
+<arg>${invalid_creds_erro}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:08.216" level="INFO">${error_msg} = Epic sadface: Username and password do not match any user in this service</msg>
+<status status="PASS" starttime="20230429 07:16:08.185" endtime="20230429 07:16:08.216"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${error_msg}</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230429 07:16:08.216" endtime="20230429 07:16:08.216"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:08.184" endtime="20230429 07:16:08.216"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230429 07:16:08.216" endtime="20230429 07:16:10.378"/>
+</kw>
+<doc>Test login with invalid password</doc>
+<status status="PASS" starttime="20230429 07:16:03.324" endtime="20230429 07:16:10.378"/>
+</test>
+<test id="s1-t3" name="Verify That User Is Not Able To Login With Inalid Username And An Valid Password" line="17">
+<kw name="Open SauceDemo Website" library="loginPageKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230429 07:16:10.378" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230429 07:16:10.394" level="INFO">Executing: C:\Users\Administrator\AppData\Roaming\Python\Python310\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230429 07:16:10.378" endtime="20230429 07:16:14.777"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:10.378" endtime="20230429 07:16:14.778"/>
+</kw>
+<kw name="Login To SwagLabs" library="loginPageKeywords">
+<arg>user1</arg>
+<arg>secret_sauce</arg>
+<doc>Login to SwagLabs</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:14.781" level="INFO">Typing text 'user1' into text field 'xpath=//*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:14.780" endtime="20230429 07:16:14.905"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:14.906" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:14.906" endtime="20230429 07:16:15.020"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:15.021" level="INFO">Clicking element 'xpath=//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:15.020" endtime="20230429 07:16:15.118"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:14.780" endtime="20230429 07:16:15.118"/>
+</kw>
+<kw name="Error Message For Invalid Creds" library="loginPageKeywords">
+<doc>Verify Error Message For Invalid Creds</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_msg}</var>
+<arg>${invalid_creds_erro}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:15.154" level="INFO">${error_msg} = Epic sadface: Username and password do not match any user in this service</msg>
+<status status="PASS" starttime="20230429 07:16:15.120" endtime="20230429 07:16:15.154"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${error_msg}</arg>
+<arg>Epic sadface: Username and password do not match any user in this service</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230429 07:16:15.154" endtime="20230429 07:16:15.154"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:15.120" endtime="20230429 07:16:15.154"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230429 07:16:15.154" endtime="20230429 07:16:17.357"/>
+</kw>
+<doc>Test login with invalid username</doc>
+<status status="PASS" starttime="20230429 07:16:10.378" endtime="20230429 07:16:17.357"/>
+</test>
+<test id="s1-t4" name="Verify That User Is Not Able To Login When The Password Is Blank And Submit Button Is Clicked" line="22">
+<kw name="Open SauceDemo Website" library="loginPageKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230429 07:16:17.357" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230429 07:16:17.373" level="INFO">Executing: C:\Users\Administrator\AppData\Roaming\Python\Python310\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230429 07:16:17.357" endtime="20230429 07:16:21.781"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:17.357" endtime="20230429 07:16:21.781"/>
+</kw>
+<kw name="Login To SwagLabs Without Password" library="loginPageKeywords">
+<arg>standard_user</arg>
+<doc>Login to SwagLabs without password</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:21.785" level="INFO">Typing text 'standard_user' into text field 'xpath=//*[@id="user-name"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:21.784" endtime="20230429 07:16:21.914"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:21.915" level="INFO">Clicking element 'xpath=//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:21.915" endtime="20230429 07:16:21.990"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:21.784" endtime="20230429 07:16:21.990"/>
+</kw>
+<kw name="Error Message For Blank Password" library="loginPageKeywords">
+<doc>Verify Error Message For Blank Password</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_msg}</var>
+<arg>${blank_field_error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:22.033" level="INFO">${error_msg} = Epic sadface: Password is required</msg>
+<status status="PASS" starttime="20230429 07:16:21.991" endtime="20230429 07:16:22.033"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${error_msg}</arg>
+<arg>Epic sadface: Password is required</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230429 07:16:22.034" endtime="20230429 07:16:22.034"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:21.991" endtime="20230429 07:16:22.034"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230429 07:16:22.036" endtime="20230429 07:16:24.221"/>
+</kw>
+<doc>Test login with blank password</doc>
+<status status="PASS" starttime="20230429 07:16:17.357" endtime="20230429 07:16:24.221"/>
+</test>
+<test id="s1-t5" name="Verify That User Is Not Able To Login When The Username Is Blank And Submit Button Is Clicked" line="27">
+<kw name="Open SauceDemo Website" library="loginPageKeywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.saucedemo.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230429 07:16:24.221" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg timestamp="20230429 07:16:24.237" level="INFO">Executing: C:\Users\Administrator\AppData\Roaming\Python\Python310\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230429 07:16:24.221" endtime="20230429 07:16:28.708"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:24.221" endtime="20230429 07:16:28.708"/>
+</kw>
+<kw name="Login To SwagLabs Without Username" library="loginPageKeywords">
+<arg>secret_sauce</arg>
+<doc>Login to SwagLabs without username</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:28.711" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:28.710" endtime="20230429 07:16:28.829"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:28.830" level="INFO">Clicking element 'xpath=//*[@id="login-button"]'.</msg>
+<status status="PASS" starttime="20230429 07:16:28.829" endtime="20230429 07:16:28.903"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:28.710" endtime="20230429 07:16:28.904"/>
+</kw>
+<kw name="Error Message For Blank Username" library="loginPageKeywords">
+<doc>Verify Error Message For Blank Username</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_msg1}</var>
+<arg>${blank_field_error}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230429 07:16:28.934" level="INFO">${error_msg1} = Epic sadface: Username is required</msg>
+<status status="PASS" starttime="20230429 07:16:28.905" endtime="20230429 07:16:28.934"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${error_msg1}</arg>
+<arg>Epic sadface: Username is required</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230429 07:16:28.935" endtime="20230429 07:16:28.935"/>
+</kw>
+<status status="PASS" starttime="20230429 07:16:28.904" endtime="20230429 07:16:28.935"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230429 07:16:28.937" endtime="20230429 07:16:31.104"/>
+</kw>
+<doc>Test login with blank password</doc>
+<status status="PASS" starttime="20230429 07:16:24.221" endtime="20230429 07:16:31.104"/>
+</test>
+<doc>Login To Website</doc>
+<status status="PASS" starttime="20230429 07:15:55.554" endtime="20230429 07:16:31.104"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="loginPageTest">loginPageTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
